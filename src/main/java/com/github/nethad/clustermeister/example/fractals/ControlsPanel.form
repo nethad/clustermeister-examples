@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="computeButton" max="32767" attributes="0"/>
+                  <Component id="resetButton" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="centerXLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="centerYLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="centerXTextField" pref="162" max="32767" attributes="0"/>
+                  <Component id="centerYTextField" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="diameterLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="iterationsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="iterationsSpinner" max="32767" attributes="0"/>
+                  <Component id="diameterTextField" pref="168" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="zoomFactorLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="zoomFactorSpinner" min="-2" pref="74" max="-2" attributes="0"/>
+              <EmptySpace pref="119" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="resetButton" alignment="3" max="32767" attributes="0"/>
+                  <Component id="centerXTextField" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="diameterTextField" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="centerXLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="diameterLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="zoomFactorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="zoomFactorSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="computeButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="centerYLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="centerYTextField" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="iterationsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="iterationsSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="resetButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="computeButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Compute"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="computeButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="centerXTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="-0.7"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="centerYTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="diameterTextField">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="3.0"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="iterationsSpinner">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="value" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="100" type="code"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="zoomFactorSpinner">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+        <Property name="value" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="2" type="code"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="centerXLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="center X"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="centerYLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="center Y"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="diameterLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="diameter"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="iterationsLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="iterations"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="zoomFactorLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="zoom factor"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
