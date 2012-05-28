@@ -13,10 +13,10 @@ import javax.swing.UIManager.LookAndFeelInfo;
 public class FractalsGUI extends javax.swing.JFrame {
     final static String[] LOOKANDFEEL = new String[]{"GTK", "Nimbus"};
     
-    private ComputeMandelbrot computeMandelbrot;
+    private AbstractComputeMandelbrot computeMandelbrot;
     
     private void initializeMandelbrot() {
-        computeMandelbrot = new ComputeMandelbrot(controlsPanel1, imagePanel1);
+        computeMandelbrot = AbstractComputeMandelbrot.create(controlsPanel1, imagePanel1, true);
         controlsPanel1.setComputeMandelBrot(computeMandelbrot);
         imagePanel1.addMouseListener(new ZoomMouseListener(controlsPanel1, computeMandelbrot));
         drawMandelbrotPicture();

@@ -17,7 +17,7 @@ public class ControlsPanel extends javax.swing.JPanel {
     private final static double DIAMETER_DEFAULT = 3.0D;
     private final static String ITERATIONS_DEFAULT = "100";
     
-    private ComputeMandelbrot computeMandelbrot;
+    private AbstractComputeMandelbrot computeMandelbrot;
 
     /**
      * Creates new form ControlsPanel
@@ -66,7 +66,7 @@ public class ControlsPanel extends javax.swing.JPanel {
         zoomFactorSpinner.setValue(value);
     }
     
-    public void setComputeMandelBrot(ComputeMandelbrot computeMandelbrot) {
+    public void setComputeMandelBrot(AbstractComputeMandelbrot computeMandelbrot) {
         this.computeMandelbrot = computeMandelbrot;
     }
     

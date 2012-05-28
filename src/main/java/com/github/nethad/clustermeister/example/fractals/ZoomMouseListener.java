@@ -14,9 +14,9 @@ import java.awt.event.MouseEvent;
  */
 public class ZoomMouseListener extends MouseAdapter {
     private final ControlsPanel controlsPanel;
-    private final ComputeMandelbrot computeMandelbrot;
+    private final AbstractComputeMandelbrot computeMandelbrot;
 
-    public ZoomMouseListener(ControlsPanel controlsPanel, ComputeMandelbrot computeMandelbrot) {
+    public ZoomMouseListener(ControlsPanel controlsPanel, AbstractComputeMandelbrot computeMandelbrot) {
         this.controlsPanel = controlsPanel;
         this.computeMandelbrot = computeMandelbrot;
     }
