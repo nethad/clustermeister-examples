@@ -5,10 +5,15 @@
 package com.github.nethad.clustermeister.example.fractals;
 
 import com.github.nethad.clustermeister.api.Clustermeister;
+import com.github.nethad.clustermeister.api.Job;
 import com.github.nethad.clustermeister.api.impl.ClustermeisterFactory;
+import com.github.nethad.clustermeister.api.impl.JobFactory;
+import com.github.nethad.clustermeister.api.impl.JobImpl;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.imageio.ImageIO;
 import javax.swing.SwingUtilities;
 import org.jppf.client.JPPFClient;
@@ -49,35 +54,33 @@ public class ComputeMandelbrot {
     void computePicture(FractalConfiguration config) {
         try {
             if (clustermeister == null) {
-                initializeClustermeister();
+                clustermeister = ClustermeisterFactory.create();
             }
-            
-                    JPPFClient jppfClient = clustermeister.getJppfClient();
-
-
             int nbTask = config.bsize;
             log("Executing " + nbTask + " tasks");
-            DataProvider dp = new MemoryMapDataProvider();
-            dp.setValue("config", config);
-            JPPFJob job = new JPPFJob();
-            job.setName("Mandelbrot fractal");
+            
+            Map<String, Object> jobData = new HashMap<String, Object>();
+            jobData.put("config", config);
+            
+            Job<MandelbrotResult> job = JobFactory.create("Clustermeister Mandelbrot", jobData);
+
+
+            image = new BufferedImage(config.asize, config.bsize, BufferedImage.TYPE_INT_RGB);
+
+            for (int i = 0; i < nbTask; i++) {
+                job.addTask(new MandelbrotCMTask(i, config));
+            }
             
             long start = System.currentTimeMillis();
 
-            image = new BufferedImage(config.asize, config.bsize, BufferedImage.TYPE_INT_RGB);
-            
-            for (int i = 0; i < nbTask; i++) {
-                job.addTask(new MandelbrotCallable(i, config));
-            }
-            
-            List<JPPFTask> results = jppfClient.submit(job);
+            List<MandelbrotResult> results = clustermeister.executeJob(job);
 
             long elapsed = System.currentTimeMillis() - start;
             log("Computation performed in " + StringUtils.toStringDuration(elapsed));
-            
-            image = generateMandelbrotImage_withJppfJob(results, config);
+
+            image = generateMandelbrotImage(results, config);
             refreshImage();
-        
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -95,29 +98,24 @@ public class ComputeMandelbrot {
         });
     }
     
-    private BufferedImage generateMandelbrotImage_withJppfJob(final List<JPPFTask> taskList, final FractalConfiguration config) throws Exception {
+    private BufferedImage generateMandelbrotImage(final List<MandelbrotResult> taskList, final FractalConfiguration config) throws Exception {
         int max = config.nmax;
 
-//        BufferedImage image = new BufferedImage(config.asize, config.bsize, BufferedImage.TYPE_INT_RGB);
         for (int j = 0; j < config.bsize; j++) {
-            MandelbrotResult task = (MandelbrotResult) taskList.get(j).getResult();
-//      int[] values = task.getValues();
+            MandelbrotResult task = taskList.get(j);
+//          int[] values = task.getValues();
             int[] colors = task.getColors();
             for (int i = 0; i < config.asize; i++) {
                 image.setRGB(i, config.bsize - j - 1, colors[i]);
             }
         }
         try {
-            ImageIO.write(image, "jpeg", new File("data/mandelbrot.jpg"));
+//            ImageIO.write(image, "jpeg", new File("data/mandelbrot.jpg"));
         } catch (Exception e) {
             log(e.getMessage());
             e.printStackTrace();
         }
         return image;
-    }
-    
-    private void initializeClustermeister() {
-        clustermeister = ClustermeisterFactory.create();
     }
     
 }
