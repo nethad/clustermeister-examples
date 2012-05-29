@@ -27,17 +27,24 @@ After that, you are able to run the examples on the command line:
 
 * Fractals
 
-	mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.FractalsGUI"
+```
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.FractalsGUI"
+```
 
 * Text Processing
 
-	mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.textproc.TextProcessing"
+```
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.textproc.TextProcessing"
+```
 
 * Async
 
-	mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.Async"
+```
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.Async"
+```
 
 or 
 
-	mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.AsyncTasks"
-
+```
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.AsyncTasks"
+```
