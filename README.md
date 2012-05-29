@@ -40,11 +40,11 @@ mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.textpro
 ### Async
 
 ```
-mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.Async"
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.async.Async"
 ```
 
 or 
 
 ```
-mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.AsyncTasks"
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.async.AsyncTasks"
 ```
