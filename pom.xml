@@ -21,7 +21,7 @@
     <inceptionYear>2012</inceptionYear>
     <organization>
         <name>The Clustermeister Team</name>
-        <url>https://github.com/nethad/clustermeister</url>
+        <url>https://github.com/nethad/clustermeister-examples</url>
     </organization>
     <developers>
         <developer>
@@ -47,9 +47,9 @@
         <url>https://github.com/nethad/clustermeister-examples/issues</url>
     </issueManagement>
     <scm>
-        <url>git@github.com/nethad/clustermeister-examples.git</url>
-        <connection>scm:git:git@github.com/nethad/clustermeister-examples.git</connection>
-        <developerConnection>scm:git:git@github.com/nethad/clustermeister-examples.git</developerConnection>
+        <url>git://github.com/nethad/clustermeister-examples.git</url>
+        <connection>git://github.com/nethad/clustermeister-examples.git</connection>
+        <developerConnection>scm:git:git@github.com:nethad/clustermeister-examples.git</developerConnection>
     </scm>
 
     <properties>
