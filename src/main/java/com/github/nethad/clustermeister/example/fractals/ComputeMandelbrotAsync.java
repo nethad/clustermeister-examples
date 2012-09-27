@@ -16,7 +16,7 @@
 package com.github.nethad.clustermeister.example.fractals;
 
 import com.github.nethad.clustermeister.api.Clustermeister;
-import com.github.nethad.clustermeister.api.Job;
+import com.github.nethad.clustermeister.api.impl.Job;
 import com.github.nethad.clustermeister.api.impl.ClustermeisterFactory;
 import com.github.nethad.clustermeister.api.impl.JobFactory;
 import com.google.common.util.concurrent.FutureCallback;

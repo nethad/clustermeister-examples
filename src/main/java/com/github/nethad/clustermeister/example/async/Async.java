@@ -16,8 +16,8 @@
 package com.github.nethad.clustermeister.example.async;
 
 import com.github.nethad.clustermeister.api.Clustermeister;
-import com.github.nethad.clustermeister.api.Job;
 import com.github.nethad.clustermeister.api.impl.ClustermeisterFactory;
+import com.github.nethad.clustermeister.api.impl.Job;
 import com.github.nethad.clustermeister.api.impl.JobFactory;
 import com.google.common.base.Joiner;
 import com.google.common.util.concurrent.FutureCallback;
@@ -61,6 +61,7 @@ public class Async {
                 job.addTask(new ReturnNumberTask(i));
             }
             ListenableFuture<List<Integer>> resultFuture = clustermeister.executeJobAsync(job);
+            
             logger.info("Returns immediately");
             Futures.addCallback(resultFuture, new FutureCallback<List<Integer>>() {
                 public void onSuccess(List<Integer> result) {
