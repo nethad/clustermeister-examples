@@ -25,26 +25,26 @@ To be able to run these examples, you first need to deploy nodes that may execut
 
 After that, you are able to run the examples on the command line:
 
-* Fractals
+### Fractals
 
 ```
 mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.FractalsGUI"
 ```
 
-* Text Processing
+### Text Processing
 
 ```
 mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.textproc.TextProcessing"
 ```
 
-* Async
+### Async
 
 ```
-mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.Async"
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.async.Async"
 ```
 
 or 
 
 ```
-mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.fractals.AsyncTasks"
+mvn exec:java -Dexec.mainClass="com.github.nethad.clustermeister.example.async.AsyncTasks"
 ```
